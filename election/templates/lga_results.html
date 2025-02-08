@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LGA Results</title>
+</head>
+<body>
+    <h2>Total Results for Selected LGA</h2>
+    <table border="1">
+        <tr>
+            <th>Party</th>
+            <th>Total Score</th>
+        </tr>
+        {% for party, score in party_totals.items %}
+        <tr>
+            <td>{{ party }}</td>
+            <td>{{ score }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

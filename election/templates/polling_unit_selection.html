@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Polling Unit</title>
+</head>
+<body>
+    <h2>Select a Polling Unit to View Results</h2>
+    <form method="POST" action="{% url 'polling_unit_results' %}">
+        {% csrf_token %}
+        <select name="uniqueid">
+            {% for polling_unit in polling_units %}
+            <option value="{{ polling_unit.uniqueid }}">{{ polling_unit.polling_unit_name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">View Results</button>
+    </form>
+</body>
+</html>
